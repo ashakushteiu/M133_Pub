@@ -40,6 +40,8 @@ export class ToDo extends EventTarget {
     checkboxElement.setAttribute('type', 'checkbox');
     checkboxElement.addEventListener("click", (e) => {
       this.#erledigt = !this.#erledigt;
+      localStorage.setItem(this.#titel, this.#erledigt);
+
 
      if (this.#erledigt) {
         spanElement.classList.add("erledigt");
