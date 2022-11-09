@@ -38,6 +38,16 @@ export class ToDo extends EventTarget {
     divElement.appendChild(buttonElement);
 
     checkboxElement.setAttribute('type', 'checkbox');
+    checkboxElement.addEventListener("click", (e) => {
+      this.#erledigt = !this.#erledigt;
+
+     if (this.#erledigt) {
+        spanElement.classList.add("erledigt");
+      }
+      else {
+        spanElement.classList.remove("erledigt");
+      }
+    });
 
     buttonElement.className = 'loeschen';
 
